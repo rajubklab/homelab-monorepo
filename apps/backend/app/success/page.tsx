@@ -1,15 +1,20 @@
-import { redirect } from "next/navigation";
+"use client";
 
-const SuccessPage = async ({
-  searchParams,
-}: {
-  searchParams: Promise<{ pageRedirectUrl: string }>;
-}) => {
-  const pageRedirectUrl = (await searchParams).pageRedirectUrl;
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
-  if (pageRedirectUrl) {
-    redirect(pageRedirectUrl);
-  }
+const SuccessPage = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const redirect = async () => {
+      await fetch(`/api/redirect?to=${pageRedirectUrl}`);
+    };
+    const pageRedirectUrl = searchParams.get("pageRedirectUrl");
+    if (pageRedirectUrl) {
+      redirect();
+    }
+  }, [searchParams]);
 
   return null;
 };

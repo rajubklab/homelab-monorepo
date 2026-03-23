@@ -4,7 +4,7 @@ const Page = () => {
   return (
     <div>
       <a
-        href={`https://local.rajubk.com/backend?pageRedirectUrl=${encodeURIComponent("https://local.rajubk.com")}`}
+        href={`https://lb.rajubk.com/backend/signin?pageRedirectUrl=${encodeURIComponent("https://lb.rajubk.com")}`}
       >
         Login
       </a>

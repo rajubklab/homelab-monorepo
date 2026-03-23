@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require("node:fs");
 const vault = require("node-vault")({
   apiVersion: "v1",
-  endpoint: "http://192.168.1.145:8200",
+  endpoint: "http://192.168.20.189:8200",
   token: "Raju@1bk2",
 });
 
@@ -29,4 +28,5 @@ async function main() {
     console.error("Error writing file:");
   }
 }
+
 main();

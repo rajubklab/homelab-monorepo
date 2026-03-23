@@ -5,7 +5,7 @@ import { genericOAuth } from "better-auth/plugins";
 import { nextCookies } from "better-auth/next-js";
 
 export const auth = betterAuth({
-  baseURL: "https://local.rajubk.com",
+  baseURL: "https://lb.rajubk.com",
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
@@ -27,6 +27,7 @@ export const auth = betterAuth({
   trustedOrigins: [
     "http://192.168.1.145:3100",
     "http://localhost:3100",
-    "https://local.rajubk.com/backend",
+    "https://lb.rajubk.com",
+    "https://lb.rajubk.com/backend",
   ],
 });
